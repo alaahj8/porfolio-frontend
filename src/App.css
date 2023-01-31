@@ -7,7 +7,13 @@ html {
 }
 
 body {
+
+    cursor:move;
     @apply text-lg
+}
+.padding_add{
+    padding-left: 3%;
+    padding-right: 3%
 }
 
 .projects img {
@@ -30,11 +36,15 @@ body {
 .text-accent {
     color: #CC6666;
 }
-
+.btn{
+    border-radius: 25%;
+}
 
 nav li a {
+   
     @apply px-4 py-5 text-lg;
 }
+
 
 nav li a:hover {
     color: #CC6666;
@@ -42,9 +52,7 @@ nav li a:hover {
 
 .mobile-nav {
     @apply block md:hidden fixed top-10 py-2 w-full h-full bg-black duration-500;
-}
-pers{
-    color: #CC6666;
+   
 }
 
 
@@ -52,3 +60,6 @@ h1 {
     font-family: 'Pacifico', cursive;
     line-height: 1.5 !important;
 }
+
+  
+  

@@ -93,13 +93,13 @@ const Skills = () => {
       <div className="Skills container mx-auto grid md:grid-cols-5 gap-10">
         {Skills.map((Skills, i) => {
           return (
-            <div className="relative" key={i}>
+            <div className="relative padding_add" key={i}>
               <img src={Skills.img} alt={Skills.title} />
               <div className="flex absolute left-0 right-0 top-[13px] bottom-0 mx-auto w-[90%] h-[90%]    opacity-0 duration-500  flex-col hover:opacity-100 ">
                 <p className="py-5 text-center font-bold px-2 text-white">
                   {Skills.desc}
                   </p>
-                  <p className="  font-bold" > {Skills.pers} </p>
+                  <p className="  font-bold" > <span className="text-accent">{Skills.pers}</span> </p>
                 
 
                 

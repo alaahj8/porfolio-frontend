@@ -25,3 +25,10 @@ function App() {
 }
 
 export default App;
+
+
+//TODO:
+//fix padding for the whole webpage (left right)
+//same size for images..
+//all text sould be in white..
+//curve the buttons..

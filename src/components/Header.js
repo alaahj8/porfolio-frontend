@@ -7,7 +7,7 @@ const Header = () => {
   const handleToggle = () => setToggle(!toggle);
 
   return (
-    <header className="flex justify-between px-5 py-2 bg-primary text-white fixed w-full z-10">
+    <header className="flex justify-between px-5 py-2 bg-primary text-white fixed w-full z-10 padding_add">
       <a href="/" className="logo text-2xl font-bold text-accent">
         Ala'a Hijazi
 
@@ -41,7 +41,7 @@ const Header = () => {
 
       {/* Mobile Nav */}
       <nav
-        className={!toggle ? "mobile-nav left-[100%]" : "mobile-nav left-0"}
+        className={!toggle ? "mobile-nav left-[100%]" : "mobile-nav left-0" }
       >
         <ul className="flex flex-col">
         <li>
