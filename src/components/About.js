@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AboutImg from "../assets/ahj1.png";
 
 const About = () => {
+
+  // eslint-disable-next-line no-unused-vars
+  const [aboutArray, setAboutArray] = useState([])
+  useEffect(() => {
+    fetch('http://localhost:8000/api/about/about')
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+    setAboutArray(data)
+  });
+  }, [])
+ 
+
+
+
+
+  
   return (
     <section className="bg-secondery text-white px-5 py-32 padding_add" id="about">
       <div className="container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between">

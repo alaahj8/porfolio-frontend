@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroImg from "../assets/ahj.png";
 
 import {
@@ -8,6 +8,16 @@ import {
 } from "react-icons/ai";
 
 const Hero = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [heroArray, setHeroArray] = useState([])
+  useEffect(() => {
+    fetch('http://localhost:8000/api/hero/hero')
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+    setHeroArray(data)
+  });
+  }, [])
   return (
     <section className="bg-primary px-5 text-white py-32 padding_add">
       <div className="container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between">

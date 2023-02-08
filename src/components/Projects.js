@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
 import project4 from "../assets/project4.png";
 import project5 from "../assets/project5.png";
 import project6 from "../assets/project6.png";
+
+
 const Projects = () => {
-  const projects = [
+  const [projectsArray, setProjectsArray] = useState([])
+  useEffect(() => {
+    fetch('http://localhost:8000/api/projects/projects')
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+    setProjectsArray(data)
+  });
+  }, [])
+  // eslint-disable-next-line no-unused-vars
+  const Projects = [
     {
       img: project1,
       title: "Project1",
@@ -69,13 +81,13 @@ const Projects = () => {
       </div>
 
       <div className="projects container mx-auto grid md:grid-cols-3 gap-10">
-        {projects.map((project, i) => {
+        {projectsArray.map((project, i) => {
           return (
             <div className="relative" key={i}>
-              <img src={project.img} alt={project.title} />
+              <img src={project.image} alt={project.title} />
               <div className="flex absolute left-0 right-0 top-[13px] bottom-0 mx-auto w-[90%] h-[90%]  bg-primary  opacity-0 duration-500 justify-center flex-col hover:opacity-100 ">
                 <p className="py-5 text-center font-bold px-2 text-white">
-                  {project.desc}
+                  {project.name}
                 </p>
 
                 <div className="mx-auto">

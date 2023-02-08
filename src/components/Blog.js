@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import blog1 from "../assets/node4.png";
 import blog2 from "../assets/APIs.png";
 
-const Blog = () => {
-  const post = [
+const Blogs = () =>
+ {
+  // eslint-disable-next-line no-unused-vars
+  const [blogsArray, setBlogsArray] = useState([])
+  useEffect(() => {
+    fetch('http://localhost:8000/api/blogs/blogs')
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+    setBlogsArray(data)
+  });
+  }, [])
+
+
+  const Blogs = [
     {
       img: blog1,
       title: "How to build a  app with Node.js and Express.js",
@@ -31,7 +44,7 @@ const Blog = () => {
       </div>
 
       <div className="projects container mx-auto grid md:grid-cols-2 gap-10">
-        {post.map((item) => {
+        {Blogs.map((item) => {
           return (
             <div>
               <img src={item.img} alt={item.title} />
@@ -50,4 +63,5 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+
+export default Blogs;

@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Contact = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [contactArray, setContactArray] = useState([])
+  useEffect(() => {
+    fetch('http://localhost:8000/api/contact/contact')
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+    setContactArray(data)
+  });
+  }, [])
+
   return (
     <section className="bg-secondery px-5 py-32 padding_add" id="contact">
       <div className="text-center md:w-[60%] mx-auto text-white">

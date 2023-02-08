@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import skill1 from "../assets/c.png";
 import skill2 from "../assets/csharp.png";
 import skill3 from "../assets/swift.png";
@@ -10,6 +10,16 @@ import skill8 from "../assets/php.png";
 import skill9 from "../assets/python.png";
 import skill10 from "../assets/ruby.png";
 const Skills = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [skillsArray, setSkillsArray] = useState([])
+  useEffect(() => {
+    fetch('http://localhost:8000/api/skills/skills')
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+    setSkillsArray(data)
+  });
+  }, [])
   const Skills = [
     {
       img: skill1,
