@@ -10,7 +10,7 @@ import project6 from "../assets/project6.png";
 const Projects = () => {
   const [projectsArray, setProjectsArray] = useState([])
   useEffect(() => {
-    fetch('https://backend-jl1j.onrender.com/api/projects/')
+    fetch('https://backend-jl1j.onrender.com/api/projects/projects')
   .then((response) => response.json())
   .then((data) => {
     console.log(data)
@@ -64,7 +64,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="bg-primary text-white px-5 py-32 padding_add" id="projects">
+    <section className="bg-primary text-white w-full padding_add" id="projects">
       <div className="container mx-auto grid md:grid-cols-2 items-center md:justify-between">
         <div className="about-info mb-5">
           <h2 className="text-4xl font-bold mb-5 border-b-[5px] w-[180px] border-indigo-300 pb-2">

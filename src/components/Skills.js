@@ -13,7 +13,7 @@ const Skills = () => {
   // eslint-disable-next-line no-unused-vars
   const [skillsArray, setSkillsArray] = useState([])
   useEffect(() => {
-    fetch('https://backend-jl1j.onrender.com/')
+    fetch('http://localhost:8000/api/skills/skills')
   .then((response) => response.json())
   .then((data) => {
     console.log(data)
