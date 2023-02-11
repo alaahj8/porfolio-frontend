@@ -31,8 +31,8 @@ const Blogs = () =>
         {blogsArray.map((item) => {
           return (
             <div>
-              <img src={item.img} alt={item.title} />
-              <h3 className="py-5 text-2xl">{item.title}</h3>
+              <img src={item.image} alt={item.name} />
+              <h3 className="py-5 text-2xl">{item.name}</h3>
               <a
                 href={item.url}
                 className=" btn bg-accent  border-2 border-[transparent] text-white px-6 py-3 hover:bg-transparent"
