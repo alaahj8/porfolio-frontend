@@ -1,33 +1,17 @@
 import React, { useEffect, useState } from "react";
-import blog1 from "../assets/node4.png";
-import blog2 from "../assets/APIs.png";
 
 const Blogs = () =>
  {
   // eslint-disable-next-line no-unused-vars
   const [blogsArray, setBlogsArray] = useState([])
   useEffect(() => {
-    fetch('http://localhost:8000/api/blogs/blogs')
+    fetch('https://backend-jl1j.onrender.com/api/blogs/blogs')
   .then((response) => response.json())
   .then((data) => {
     console.log(data)
     setBlogsArray(data)
   });
   }, [])
-
-
-  const Blogs = [
-    {
-      img: blog1,
-      title: "How to build a  app with Node.js and Express.js",
-      url: "https://www.freecodecamp.org/news/build-six-node-js-and-express-js/",
-    },
-    {
-      img: blog2,
-      title: "Top 15 Free API's",
-      url: "https://apipheny.io/free-api/",
-    },
-  ];
 
   return (
     <section className="bg-primary text-white px-5 py-32 padding_add" id="blog">
@@ -44,7 +28,7 @@ const Blogs = () =>
       </div>
 
       <div className="projects container mx-auto grid md:grid-cols-2 gap-10">
-        {Blogs.map((item) => {
+        {blogsArray.map((item) => {
           return (
             <div>
               <img src={item.img} alt={item.title} />
