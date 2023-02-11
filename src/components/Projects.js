@@ -10,7 +10,7 @@ import project6 from "../assets/project6.png";
 const Projects = () => {
   const [projectsArray, setProjectsArray] = useState([])
   useEffect(() => {
-    fetch('https://backend-jl1j.onrender.com/api/projects/hijazi')
+    fetch('https://backend-jl1j.onrender.com')
   .then((response) => response.json())
   .then((data) => {
     console.log(data)
